@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% if title %}
+            Flasky- {{ title }}
+        {% else %}
+             Flasky
+        {% endif %}
+    </title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    {% endwith %}
+    <div>FlaskyBlogy: 
+        
+        <a href="/index">Home</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+    
+    </div>
+    </hr>
+    {% block content %}
+    
+    {% endblock content %}
+</body>
+</html>
