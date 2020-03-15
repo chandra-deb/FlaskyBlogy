@@ -32,7 +32,6 @@ def login():
         if form.username.data == 'Chandra' and form.password.data == 'password':
             flash('Login Successful!',category='success')
             return redirect(url_for('index'))
-
     return render_template('login.html', title='Sign In', form=form)
 
 

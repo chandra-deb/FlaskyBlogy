@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
     <h1>Sign In</h1>
@@ -6,23 +6,19 @@
         {{ form.hidden_tag() }}
         <p>
             {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
             {% for error in form.username.errors %}
-                {{ error }}
+            <span style="color: red;">{{ error }}</span>
             {% endfor %}
-            {{ form.username }}
         </p>
         <p>
             {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
             {% for error in form.password.errors %}
-                {{ error }}
+            <span style="color: red;">{{ error }}</span>
             {% endfor %}
-            {{ form.password }}
         </p>
-        <p>
-            {{ form.remember_me }}{{ form.remember_me.label }}
-        </p>
-        <p>
-            {{ form.submit }}
-        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit() }}</p>
     </form>
-{% endblock content %}
+{% endblock %}
