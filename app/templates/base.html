@@ -12,11 +12,6 @@
     </title>
 </head>
 <body>
-    {% with messages = get_flashed_messages() %}
-        {% for message in messages %}
-            {{ message }}
-        {% endfor %}
-    {% endwith %}
     <div>FlaskyBlogy: 
         
         <a href="{{ url_for('index') }}">Home</a>
@@ -25,6 +20,12 @@
     
     </div>
     </hr>
+
+    {% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+    {% endwith %}
     {% block content %}
     
     {% endblock content %}
